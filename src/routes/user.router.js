@@ -1,11 +1,9 @@
 "use strict";
-/* -------------------------------------------------------
-    EXPRESSJS - BLOG Project with Mongoose
-------------------------------------------------------- */
-const router = require('express').Router();
-const user = require('../controllers/user.controller');
-/* ------------------------------------------------------- */
-// URL: /users ->
+
+const router = require("express").Router();
+const user = require("../controllers/user.controller");
+
+//! User Controller
 
 router.route("/")
     .get(user.list)
