@@ -1,4 +1,3 @@
-
 "use strict";
 /* -------------------------------------------------------
     EXPRESSJS - BLOG Project with Mongoose
@@ -26,24 +25,15 @@ require('./src/dbConnection')();
 app.all('/', (req, res) => res.send('Welcome to Blog API'));
 
 // Blog Route
-
+app.use('/blogs', require('./src/routes/blog.router'));
 // User Route
+app.use('/users', require('./src/routes/user.router'));
 
 
 /*------------------------------------------------------- */
 
 // Error Handler:
-
+app.use(require('./src/middlewares/errorHandler'));
 /*------------------------------------------------------- */
 
 app.listen(PORT, () => console.log('Running at http://127.0.0.1:' + PORT));
-
-
-
-
-
-
-
-
-
-
